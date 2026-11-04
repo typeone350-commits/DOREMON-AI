@@ -19,6 +19,7 @@ jobs:
       - run: rm -f capacitor.config.ts && printf '{"appId":"com.doremon.ai","appName":"Doremon AI","webDir":"dist"}' > capacitor.config.json
       - run: npx cap add android
       - run: npx cap copy android && npx cap sync
+      - run: sed -i 's|<application|<uses-permission android:name="android.permission.RECORD_AUDIO" />\n    <application|' android/app/src/main/AndroidManifest.xml
       - run: printf "\nallprojects { configurations.all { resolutionStrategy.eachDependency { if (requested.group == 'org.jetbrains.kotlin') { useVersion '1.9.24' } } } }\n" >> android/build.gradle
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
