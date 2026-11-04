@@ -1,0 +1,6 @@
+{
+  "name": "Doremon AI Assistant",
+  "description": "Multilingual voice-to-voice AI assistant with real-time Gemini Live audio, natural language understanding, and Android app action execution.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
