@@ -16,6 +16,7 @@ jobs:
           java-version: '17'
       - run: npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
       - run: npx cap init "Doremon AI" com.doremon.ai --web-dir=dist
+      - run: rm -f capacitor.config.ts && printf '{"appId":"com.doremon.ai","appName":"Doremon AI","webDir":"dist"}' > capacitor.config.json
       - run: npx cap add android
       - run: npx cap copy android && npx cap sync
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
