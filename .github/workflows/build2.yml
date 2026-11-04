@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
       - run: npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
       - run: npx cap init "Doremon AI" com.doremon.ai --web-dir=dist
       - run: rm -f capacitor.config.ts && printf '{"appId":"com.doremon.ai","appName":"Doremon AI","webDir":"dist"}' > capacitor.config.json
